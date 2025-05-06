@@ -1,0 +1,15 @@
+---
+# handlers file for sherif-role
+  - name: Restart Apache
+    service:
+      name: "{{ SW }}"
+      state: restarted
+      enabled: true
+
+
+
+  - name: Upload Mywebsite
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+

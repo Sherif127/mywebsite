@@ -1,0 +1,40 @@
+---
+# tasks file for sherif-role
+    - name: task1 Install Apache (httpd)
+      dnf:
+        name: "{{ SW }}"
+        state: present
+
+    - name: task2 Enable and start Apache
+      service:
+        name: "{{ SW }}"
+        state: started
+        enabled: yes
+
+    - name: task3 Backup httpd.conf
+      fetch:
+        src: "{{ httpd_conf_path }}"
+        dest: "{{ backup_dest }}"
+
+    - name: task4 Change Apache listen port to 88
+      lineinfile:
+        path: "{{ httpd_conf_path }}"
+        regexp: '^Listen '
+        line: "Listen {{ listen_port }}"
+
+
+    - name: task5 Allow Apache to use port 88 in SELinux
+      command: semanage port -m -t http_port_t -p tcp {{ listen_port }}
+      args:
+        warn: false
+      ignore_errors: true
+      notify:
+        - Restart Apache
+        - Upload Mywebsite
+
+    - name: task6 Ensure firewalld allows port 88
+      firewalld:
+        port: "{{ firewall_port }}/tcp"
+        permanent: yes
+        state: enabled
+        immediate: yes

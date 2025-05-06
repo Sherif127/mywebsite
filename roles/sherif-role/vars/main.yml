@@ -1,0 +1,7 @@
+---
+# vars file for sherif-role
+SW: httpd
+listen_port: 88      # Port Apache will listen on
+firewall_port: 88    # Port to allow in firewalld
+backup_dest: /tmp/httpd.conf.backup  # Local backup destination
+httpd_conf_path: /etc/httpd/conf/httpd.conf  # Apache config path
