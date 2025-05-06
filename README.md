@@ -4,32 +4,30 @@ This project uses **Ansible** to automate the deployment of a simple website on 
 
 ---
 
-## 📁 Project Structure
-
-
+📦 Project Structure
+~/
 ├── ansible.cfg
 ├── inventory
-├── mywebsite.yml
-├── README.md
+├── mywebsite.yaml
 ├── sherif-role.zip
 ├── roles/
 │ └── sherif-role/
-│ ├── defaults/
-│ │ └── main.yml
-│ ├── files/
-│ │ └── index.html
-│ ├── handlers/
-│ │ └── main.yml
-│ ├── meta/
-│ │ └── main.yml
-│ ├── tasks/
-│ │ └── main.yml
-│ ├── templates/
-│ │ └── motd.j2
-│ └── vars/
-│ └── main.yml
-
-## ⚙️ Features
+│   ├── defaults/
+│   │   └── main.yml
+│   ├── files/
+│   │   └── index.html
+│   └── handlers/
+│   │        └── main.yaml
+│   ├── meta/
+│   │   └── main.yml
+│   ├── vars/
+│   │   └── main.yml
+│   ├── tasks/
+│   │   └── index.html
+│   └── templates /
+│           └── motd.j2
+└── README.md
+⚙️ Features
 - Installs and configures **Apache (httpd)** on RHEL 9
 - Deploys a custom `index.html` file
 - Serves the website on custom port `88`
