@@ -5,6 +5,7 @@ This project uses **Ansible** to automate the deployment of a simple website on 
 ---
 
 📦 Project Structure
+```
 ~/
 ├── ansible.cfg
 ├── inventory
@@ -27,6 +28,7 @@ This project uses **Ansible** to automate the deployment of a simple website on 
 │   └── templates /
 │           └── motd.j2
 └── README.md
+```
 ⚙️ Features
 - Installs and configures **Apache (httpd)** on RHEL 9
 - Deploys a custom `index.html` file
@@ -39,25 +41,32 @@ This project uses **Ansible** to automate the deployment of a simple website on 
 
 🚀 How to Use
 1. Clone the Repository
-git clone https://github.com/mariam0o0/wordpress_ansible.git
+```git clone https://github.com/mariam0o0/wordpress_ansible.git```
 2. Configure Inventory and Variables
 Edit inventory.ini to define your target server under [webservers].
+```
 [webserver]
 <EC2-PUBLIC-IP> ansible_user=ec2-user ansible_ssh_private_key_file=~/.ssh/your-key.pem
+```
+
 3. Set your custom port or any dynamic message for the template.
+```
  roles/sherif-role/vars/main.yml
 roles/sherif-role/defaults/main.yml
+```
 Set your custom port or any dynamic message for the template.
 
 4. Run the Playbook
+```
 ansible-navigator run mywebsite.yml -i inventory -m stdout 
+```
 This will automatically install and configure Apache , Allow traffic on port 88 , Place your index.html at /var/www/html/ , Restart services and apply security configs
 Once deployed, visit: your website
 
 5. Don't forget to allow custom tcp port on security group
-
+```
 http://<EC2-PUBLIC-IP>:88
-
+```
 📚 Requirements
 Ansible 2.10+
 Python and pip3
