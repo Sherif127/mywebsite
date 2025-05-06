@@ -29,7 +29,7 @@ This project uses **Ansible** to automate the deployment of a simple website on 
 │           └── motd.j2
 └── README.md
 ```
-⚙️ Features
+# ⚙️ Features
 - Installs and configures **Apache (httpd)** on RHEL 9
 - Deploys a custom `index.html` file
 - Serves the website on custom port `88`
@@ -39,7 +39,7 @@ This project uses **Ansible** to automate the deployment of a simple website on 
   - **Apache** to listen and serve on port 88
 - Modular design using a single reusable Ansible role
 
-🚀 How to Use
+# 🚀 How to Use
 1. Clone the Repository
 ```git clone https://github.com/mariam0o0/wordpress_ansible.git```
 2. Configure Inventory and Variables
@@ -67,10 +67,10 @@ Once deployed, visit: your website
 ```
 http://<EC2-PUBLIC-IP>:88
 ```
-📚 Requirements
+# 📚 Requirements
 Ansible 2.10+
 Python and pip3
 RedHat-based target system with root or sudo access
 
-Author:
+# Author:
 Sherif Shaban
