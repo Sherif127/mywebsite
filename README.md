@@ -10,7 +10,6 @@ This project uses **Ansible** to automate the deployment of a simple website on 
 ├── ansible.cfg
 ├── inventory
 ├── mywebsite.yaml
-├── sherif-role.zip
 ├── roles/
 │ └── sherif-role/
 │   ├── defaults/
